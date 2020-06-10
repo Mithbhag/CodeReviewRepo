@@ -42,7 +42,7 @@ pipeline {
 						attachmentsPattern: '**/*.html; **/*.csv',
 						compressLog: true,
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
-						to: 'mithileshkumar.bhagat@softwareag.com'
+						to: 'mithilesh.ext@gmail.com'
 						)
 			   
         }
