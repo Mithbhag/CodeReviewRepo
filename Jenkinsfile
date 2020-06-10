@@ -29,7 +29,7 @@ pipeline {
 			   echo "${gv_cr_root_dir}"
 			   echo "${IS_ROOT_DIR}"
 			   bat  "cd ${gv_cr_root_dir}"
-               bat "${gv_cr_root_dir}/CodeReview.cmd -Dcode.review.directory=C:/codeConfigDemo -Dcode.review.pkgprefix=Pear -Dcode.review.folder-prefix=pear -Dcode.review.report.directory=C:\SoftwareAG\tools\ISCCR\Reports -Dcode.review.runmode=MULTI"
+               bat "${gv_cr_root_dir}/CodeReview.cmd -Dcode.review.directory=C:/codeConfigDemo -Dcode.review.pkgprefix=Pear -Dcode.review.folder-prefix=pear -Dcode.review.report.directory=C:/SoftwareAG/tools/ISCCR/Reports -Dcode.review.runmode=MULTI"
         }
        } 
  	
