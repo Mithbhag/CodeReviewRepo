@@ -36,9 +36,8 @@ pipeline {
 	    stage('SendEmail'){
             steps {
                echo 'Review Report Generated'
-			   emailext(
-						emailext body: 'Please visit ${env.BUILD_URL} for further information', subject: 'Test', to: 'Mithilesh.ext@gmail.com'
-						)
+		emailext body: 'Please visit ${env.BUILD_URL} for further information', subject: 'Test', to: 'Mithilesh.ext@gmail.com'
+						
 			   
         }
        } 
