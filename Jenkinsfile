@@ -29,7 +29,7 @@ pipeline {
 			   echo "${gv_cr_root_dir}"
 			   echo "${IS_ROOT_DIR}"
 			   cd   "${gv_cr_root_dir}"
-               bat "${gv_cr_root_dir}/CodeReview.cmd -Dcode.review.directory=C:/Program Files (x86)/Jenkins/workspace/Demo -Dcode.review.pkgname=PearCodeReview -Dcode.review.pkgprefix=Pear -Dcode.review.folder-prefix=pear"
+               bat "${gv_cr_root_dir}/CodeReview.cmd -Dcode.review.directory=C:\codeConfigDemo -Dcode.review.pkgname=PearCodeReview -Dcode.review.pkgprefix=Pear -Dcode.review.folder-prefix=pear"
         }
        } 
  	
