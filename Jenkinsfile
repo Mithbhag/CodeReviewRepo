@@ -8,8 +8,7 @@ pipeline {
             }
         }
         
-        
-        stages {
+       
         stage('Review'){
             steps {
                echo 'Reviewing the application'
