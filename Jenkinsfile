@@ -36,8 +36,14 @@ pipeline {
 	    stage('SendEmail'){
             steps {
                echo 'Review Report Generated'
-		emailext attachLog: true, body: "${currentBuild.result}: ${BUILD_URL}", compressLog: true, replyTo: 'mithilesh.ext@gmail.com',
-       		subject: "Build Notification: ${JOB_NAME}-Build# ${BUILD_NUMBER} ${currentBuild.result}", to: 'mithilesh.ext@gmail.com'			
+			   emailext(
+						attachLog: true,
+						body: "Please visit ${env.BUILD_URL} for further information.",
+						attachmentsPattern: '**/*.html; **/*.csv',
+						compressLog: true,
+						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
+						to: 'mithileshkumar.bhagat@softwareag.com'
+						)
 			   
         }
        } 
