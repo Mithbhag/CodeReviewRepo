@@ -1,5 +1,15 @@
 pipeline {
     agent any 
+	
+	environment {
+   
+
+   // initialize jenkins global variables to local variables
+     gv_cr_root_dir = "${CR_ROOT_DIR}"
+	 gv_is_root_dir  = "${IS_ROOT_DIR}"
+
+     }
+
 
     stages {
         stage('Initialize'){
@@ -12,10 +22,17 @@ pipeline {
         stage('Perform-Code-Review'){
             steps {
                echo 'Code Review Stage Started'
-              // bat "C:\SoftwareAG\tools\ISCCR\CodeReview.cmd -Dcode.review.directory=C:\webMethods_10_5\IntegrationServer\instances\default\packages -Dcode.review.pkgname=PearProcessTravelApproval -Dcode.review.pkgprefix=Pear -Dcode.review.folder-prefix=pear -Dcode.review.report.directory=C:\SoftwareAG\tools\ISCCR\Reports"
-            }
+			   echo "${gv_cr_root_dir}"
+               bat "${gv_cr_root_dir}/CodeReview.cmd -Dcode.review.directory=${gv_is_root_dir}/instances/default/packages -Dcode.review.pkgname=PearProcessTravelApproval -Dcode.review.pkgprefix=Pear -Dcode.review.folder-prefix=pear"
         }
+       } 
         
+        stage('Check Report'){
+            steps {
+               echo 'Review Report Generated'
+			   
+        }
+       } 
  	
     }
 }
