@@ -39,7 +39,7 @@ pipeline {
 			   emailext(
 						mimeType: 'text/html',
         					
-				   		body:'test email from jenoins job' readFile("C:/SoftwareAG/tools/ISCCR/Reports/test.html"),
+				   		body:readFile("C:/SoftwareAG/tools/ISCCR/Reports/test.html") 'test email from jenoins job' ,
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
 						to: 'mithilesh.ext@gmail.com'
 				   
