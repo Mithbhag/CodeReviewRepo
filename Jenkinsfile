@@ -38,8 +38,8 @@ pipeline {
                echo 'Review Report Generated'
 			   emailext(
 						attachLog: true,
-						body: "Please visit ${env.BUILD_URL} for further information.",
-						attachmentsPattern: 'C:/SoftwareAG/tools/SCCR/Reports/*.html',
+						mimeType: 'text/html',
+        					body: "${FILE, path="C:/SoftwareAG/tools/SCCR/Reports/*.html"}",
 						compressLog: true,
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
 						to: 'mithileshkumar.bhagat@softwareag.com'
@@ -51,16 +51,7 @@ pipeline {
         }
        } 
 	
-	 stage('Email')
-        {
-        env.ForEmailPlugin = env.WORKSPACE
-        emailext mimeType: 'text/html',
-        body: '${FILE, path="C:/SoftwareAG/tools/SCCR/Reports/*.html"}',
-        subject: currentBuild.currentResult + " : " + env.JOB_NAME,
-        to: 'mithileshkumar.bhagat@softwareag.com'
-        }   
-	
-	    
+	 
 	    
 	    
 	    
