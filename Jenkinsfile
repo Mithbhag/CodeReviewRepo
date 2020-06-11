@@ -39,7 +39,7 @@ pipeline {
 			   emailext(
 						attachLog: true,
 						body: "Please visit ${env.BUILD_URL} for further information.",
-						attachmentsPattern: 'C:/SoftwareAG/tools/SCCR/Reports/*.html,
+						attachmentsPattern: 'C:/SoftwareAG/tools/SCCR/Reports/*.html',
 						compressLog: true,
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
 						to: 'mithileshkumar.bhagat@softwareag.com'
