@@ -37,10 +37,8 @@ pipeline {
             steps {
                echo 'Review Report Generated'
 			   emailext(
-						attachLog: true,
 						mimeType: 'text/html',
-        					body: '${FILE, path="C:/SoftwareAG/tools/SCCR/Reports/MULTI__CodeReviewReport__html-multi.html"}',
-						compressLog: true,
+        					body: '${FILE, path="${gv_cr_root_dir}/Reports/MULTI__CodeReviewReport__html-multi.html"}',
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
 						to: 'mithilesh.ext@gmail.com'
 				   
