@@ -37,18 +37,24 @@ pipeline {
             steps {
                echo 'Review Report Generated'
 			   emailext(
-						attachLog: true,
-						body: "Please visit ${env.BUILD_URL} for further information.",
-						attachmentsPattern: '**/*.html; **/*.csv',
-						compressLog: true,
+						mimeType: 'text/html',
+        					attachLog: true,
+				   		body:readFile("C:/SoftwareAG/tools/ISCCR/Reports/*.html"),
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
-						to: 'mithileshkumar.bhagat@softwareag.com'
+						to: 'mithilesh.ext@gmail.com'
+				   
+				   
+				   
 						)
 			   
         }
        } 
 	
-	
-	
+	 
+	    
+	    
+	    
+	    
+	    
     }
 }
