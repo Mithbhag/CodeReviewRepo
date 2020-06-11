@@ -38,7 +38,7 @@ pipeline {
                echo 'Review Report Generated'
 			   emailext(
 						mimeType: 'text/html',
-        					
+        					attachLog: true,
 				   		body:readFile("C:/SoftwareAG/tools/ISCCR/Reports/test.html"),
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
 						to: 'mithilesh.ext@gmail.com'
