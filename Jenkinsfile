@@ -39,7 +39,7 @@ pipeline {
 			   emailext(
 						attachLog: true,
 						mimeType: 'text/html',
-        					body: '${FILE, path="C:/SoftwareAG/tools/SCCR/Reports/*.html"}',
+        					body: '${FILE, path="C:/SoftwareAG/tools/SCCR/Reports/MULTI__CodeReviewReport__html-multi.html"}',
 						compressLog: true,
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
 						to: 'mithilesh.ext@gmail.com'
