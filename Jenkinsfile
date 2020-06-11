@@ -24,7 +24,7 @@ pipeline {
         
        
         stage('Perform-Code-Review'){
-            steps {
+            steps { 
                echo 'Code Review Stage Started'
 			   echo "${gv_cr_root_dir}"
 			   echo "${IS_ROOT_DIR}"
