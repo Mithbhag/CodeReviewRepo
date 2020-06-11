@@ -43,12 +43,28 @@ pipeline {
 						compressLog: true,
 						subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
 						to: 'mithileshkumar.bhagat@softwareag.com'
+				   
+				   
+				   
 						)
 			   
         }
        } 
 	
+	 stage('Email')
+        {
+        env.ForEmailPlugin = env.WORKSPACE
+        emailext mimeType: 'text/html',
+        body: '${FILE, path="C:/SoftwareAG/tools/SCCR/Reports/*.html"}',
+        subject: currentBuild.currentResult + " : " + env.JOB_NAME,
+        to: 'mithileshkumar.bhagat@softwareag.com'
+        }   
 	
-	
+	    
+	    
+	    
+	    
+	    
+	    
     }
 }
