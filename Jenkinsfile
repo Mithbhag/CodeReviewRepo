@@ -25,7 +25,7 @@ pipeline {
         }
        } 
  	
-       stage('SendEmail'){
+       stage('SendEmail'){ 
             steps {
                echo 'Review Report Generated'
 	       emailext(
