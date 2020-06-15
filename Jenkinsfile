@@ -24,7 +24,7 @@ pipeline {
                bat "${gv_cr_root_dir}/CodeReview.cmd -Dcode.review.directory=C:/codeConfigDemo -Dcode.review.pkgprefix=Corp -Dcode.review.folder-prefix=corp -Dcode.review.report.directory=C:/SoftwareAG/tools/ISCCR/Reports -Dcode.review.runmode=MULTI"
         }
        } 
- 	
+ 	 
        stage('SendEmail'){ 
             steps {
                echo 'Review Report Generated'
