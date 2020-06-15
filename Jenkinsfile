@@ -35,7 +35,7 @@ pipeline {
 		       subject:"Jenkins Job '${env.JOB_NAME}' (${env.BUILD_NUMBER} Report ",
 		       to: 'mithileshkumar.bhagat@softwareag.com'
 			)
-			   
+			    
         }
        }  
 
